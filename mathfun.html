@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math Fun!</title>
+</head>
+<button onclick="getNums()">Click to Start</button>
+<p id="showUsrNums"></p>
+
+
+<body>
+<script>
+
+
+    var numberSet = [];
+    var quit = False;
+    function getNums() {
+
+
+        do {
+            var userInput = parseInt(prompt("Enter only one positive number at a time. Enter -1 to quit: ", ""));
+            var count = 0;
+
+            if (userInput != -1) {
+                numberSet[count] = userInput;
+                count += 1;
+                quit = False;
+            }
+            else {
+                quit = true;
+            }
+        } while (!quit);
+        document.getElementById("showUsrNums").innerHTML = "Your numbers: " + numberSet;
+
+    }
+
+</script>
+
+</body>
+</html>
