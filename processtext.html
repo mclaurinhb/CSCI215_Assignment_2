@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Process Text</title>
+
+</head>
+<body>
+
+<button onclick="processText()">Click to start</button>
+
+<div id="input">
+    <p>Please input text ending with a period:</p>
+    <input id="words">
+</div>
+
+<div id="output">
+    <output id="returned"></output>
+</div>
+
+<script>
+    function processText() {
+        var input = document.getElementById("words").value; //get input text
+        var output = "";
+        input = input.toUpperCase();
+        input = input.replace(/\./g, ""); //parse into separate words
+        input = input.split(" ");
+        for (var i=0; i<input.length; i++) {
+            var count = 0;
+            var current = input[i];
+            for (var j=0; j<input.length; j++) {
+                if (input[j] == current && !output.includes(current)) {
+                    count = count + 1;
+                }
+            }
+            if (!output.includes(current)) {
+                output = output + current + " " + count + " // ";
+            }
+        }
+        document.getElementById("returned").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>
