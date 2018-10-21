@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Pic</title>
+</head>
+<body>
+     <p>A Random Picture will be displayed. Refresh page to show a new pic:</p>
+        <img id="picture">
+
+<script>
+    function showPic() {
+        var displayedPic = document.getElementById("picture");
+        displayedPic.src = randomPic();
+    }
+    function randomPic(){
+        var picArray = ['pics/pic0.jpg', 'pics/pic1.jpg', 'pics/pic2.jpg', 'pics/pic3.jpg', 'pics/pic4.jpg'];
+        var randomPicture = picArray[Math.floor(Math.random()*picArray.length)];
+        return randomPicture;
+    }
+    showPic();
+</script>
+</body>
+</html>
